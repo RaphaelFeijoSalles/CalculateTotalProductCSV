@@ -1,6 +1,7 @@
 package entities;
 
-public class ProductCalc extends Product{
+public class ProductCalc {
+    private String name;
     private Double total;
 
     public ProductCalc(Double total) {
@@ -8,7 +9,7 @@ public class ProductCalc extends Product{
     }
 
     public ProductCalc(String name, Double total) {
-        super(name);
+        this.name = name;
         this.total = total;
     }
 
@@ -16,8 +17,9 @@ public class ProductCalc extends Product{
         return total;
     }
 
-    public void calcTotal(){
-        this.total = super.getValue() * super.getQuantity();
+    @Override
+    public String toString(){
+        return name + ", " + total;
     }
 
 }
