@@ -1,106 +1,99 @@
-# ExercicioWriteCSV
+ExercicioWriteCSV
 
-Este projeto foi desenvolvido como um **exercício prático em Java** para treinar a leitura e escrita de arquivos CSV, além de reforçar o uso de classes, métodos, exceções e manipulação de dados.  
-O objetivo é **ler um arquivo CSV com informações de produtos**, calcular o total de cada um (`valor * quantidade`) e **gerar um novo arquivo CSV** com esses resultados.
+This project was developed as a practical Java exercise to practice reading and writing CSV files, as well as to reinforce the use of classes, methods, exceptions, and data manipulation.
+The goal is to read a CSV file containing product information, calculate the total for each product (value * quantity), and generate a new CSV file with the results.
 
----
+💡 Project Objective
+The program reads a .csv file containing products in the format:
 
-## 💡 Objetivo do projeto
-O programa lê um arquivo `.csv` contendo produtos no formato:
-nome,valor,quantidade
+name,value,quantity
 
-css
-Copiar código
-Em seguida, ele calcula o total de cada produto e grava os resultados em um novo arquivo de saída, no formato:
-nome,total
 
-go
-Copiar código
+Then, it calculates the total for each product and writes the results to a new output file in the format:
 
-Exemplo de entrada (`products.csv`):
+name,total
+
+
+Example input (products.csv):
+
 TV,1000.00,2
 Mouse,50.00,5
 
-css
-Copiar código
 
-Exemplo de saída (`summary.csv`):
+Example output (summary.csv):
+
 TV,2000.00
 Mouse,250.00
 
-yaml
-Copiar código
 
----
+🧩 Project Structure
+The code is organized into packages for better structure:
 
-## 🧩 Estrutura do projeto
-O código foi separado em pacotes para manter a organização:
+application → contains the main class (Main) that starts the program
 
-- `application` → contém a classe principal (`Main`) que inicia o programa  
-- `entities` → classes que representam os objetos do sistema (ex: `Product`, `ProductCalc`)  
-- `services` → classes responsáveis por ler o arquivo, fazer os cálculos e gerar a saída  
+entities → classes representing system objects (e.g., Product, ProductCalc)
 
-Essa estrutura ajuda a entender a ideia de **separação de responsabilidades** — cada parte do código tem uma função específica.
+services → classes responsible for reading the file, performing calculations, and generating output
 
----
+This structure demonstrates the concept of separation of responsibilities—each part of the code has a specific role.
 
-## 🛠️ Como executar
-1. Compile o programa:
-   ```bash
-   javac -d out src/application/Main.java src/entities/*.java src/services/*.java
-Execute o programa:
+🛠️ How to Run
+Compile the program:
 
-bash
-Copiar código
+javac -d out src/application/Main.java src/entities/*.java src/services/*.java
+
+
+Run the program:
+
 java -cp out application.Main
-Informe o caminho completo (path) do arquivo CSV de entrada e o local onde deseja salvar o novo arquivo.
 
-Exemplo no Windows:
 
-csharp
-Copiar código
-Digite o caminho do arquivo de origem: C:\Users\Raphael\Documents\products.csv
-Digite o caminho da pasta de destino: C:\Users\Raphael\Documents\out.csv
-O programa criará um arquivo chamado out.csv dentro da pasta informada.
+Enter the full path of the input CSV file and the location where you want to save the new file.
 
-📘 Sobre o aprendizado
-Este projeto foi feito com o objetivo de praticar leitura e escrita de arquivos, manipulação de listas e classes em Java.
-Ainda é um exercício simples, mas já representa um passo importante na fixação de conceitos fundamentais da linguagem.
+Example on Windows:
 
-Eu também sei que, em casos reais, para cálculos monetários o ideal seria usar BigDecimal ao invés de double, e que existem formas mais robustas de trabalhar com CSV (como bibliotecas externas), mas aqui a ideia foi entender e praticar a lógica “na mão”.
+Enter the source file path: C:\Users\Raphael\Documents\products.csv
+Enter the destination folder path: C:\Users\Raphael\Documents\out.csv
 
-📂 Exemplo de estrutura de pastas
-css
-Copiar código
+
+The program will create a file named out.csv in the specified folder.
+
+📘 About the Learning
+This project was created to practice file reading and writing, list manipulation, and working with classes in Java. It is a simple exercise but represents an important step in solidifying fundamental Java concepts.
+
+I am also aware that in real-world scenarios, for monetary calculations, it is better to use BigDecimal instead of double, and that there are more robust ways to handle CSV files (e.g., external libraries). Here, the goal was to understand and practice the logic “manually.”
+
+📂 Example Folder Structure
+
 ExercicioWriteCSV/
-│
 ├── src/
-   ├── application/
-   │   └── Main.java
-   ├── entities/
-   │   ├── Product.java
-   │   └── ProductCalc.java
-   └── services/
-       ├── PullProductsService.java
-       ├── ProductCalculeService.java
-       └── CreateArchiveService.java
+│   ├── application/
+│   │   └── Main.java
+│   ├── entities/
+│   │   ├── Product.java
+│   │   └── ProductCalc.java
+│   └── services/
+│       ├── PullProductsService.java
+│       ├── ProductCalculeService.java
+│       └── CreateArchiveService.java
 
-🧠 O que este projeto demonstra
-Entendimento básico de POO (Programação Orientada a Objetos)
 
-Uso de pacotes e organização de classes
+🧠 What This Project Demonstrates
 
-Leitura e escrita de arquivos CSV com BufferedReader e BufferedWriter
+Basic understanding of OOP (Object-Oriented Programming)
 
-Uso de try-with-resources para fechar arquivos automaticamente
+Use of packages and class organization
 
-Manipulação de listas (ArrayList) e strings (split, trim, etc.)
+Reading and writing CSV files with BufferedReader and BufferedWriter
 
-Aplicação de boas práticas iniciais de estruturação de projeto
+Use of try-with-resources to automatically close files
 
-🗒️ Observação final
-Este projeto é um exercício de aprendizado e foi feito para treinar conceitos fundamentais de Java, sem foco em bibliotecas externas ou estruturas avançadas.
-Com o tempo, pretendo aprimorar e refatorar o código conforme meu aprendizado evoluir.
+List manipulation (ArrayList) and string operations (split, trim, etc.)
 
-✉️ Autor
-Raphal Salles - Londrina/PR
+Application of initial good practices in project structure
+
+🗒️ Final Note
+This project is a learning exercise designed to practice fundamental Java concepts, without focusing on external libraries or advanced structures. Over time, I plan to improve and refactor the code as my skills evolve.
+
+✉️ Author
+Raphael Salles – Londrina/PR
